@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap");
+
+:root {
+    --bg-color: #242423;
+    --yellow-primary: #f5cb5c;
+    --yellow-secondary: #6e6651;
+    --color-text: #626364;
+    --correct-letter: #b9d2b1;
+    --wrong-letter: #f07167;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    font-family: "Roboto Mono", monospace;
+    background-color: var(--bg-color);
+}
+
+/* CONTAINER */
+
+.container {
+    border: 1px solid var(--color-text);
+    max-width: 600px;
+    margin: 100px auto 0 auto;
+    padding: 20px 20px 30px 20px;
+    border-radius: 10px;
+}
+
+/* TYPING SETTINGS DIV */
+
+.duration-options > li {
+    display: inline-block;
+    list-style: none;
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--yellow-secondary);
+    cursor: pointer;
+    transition: transform 0.25s, color 0.35s;
+}
+
+.duration-options .selected-duration {
+    color: var(--yellow-primary);
+    font-weight: 400;
+    transform: translateY(-15%);
+}
+
+/* TEXT AREA */
+
+.text-area {
+    box-sizing: content-box;
+    max-height: max-content;
+    overflow: scroll;
+    margin-top: 30px;
+    font-size: 1.1rem;
+    word-break: break-word;
+    letter-spacing: 1px;
+    color: var(--color-text);
+    line-height: 1.5;
+    padding: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+.text,
+.change-paragraph {
+    filter: blur(5px);
+    transition: 0.4s;
+}
+
+.blur-info {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--yellow-primary);
+    z-index: 1;
+    transition: color 0.25s;
+}
+
+.blur-info:hover {
+    color: #b89944;
+}
+
+.text-area::-webkit-scrollbar {
+    display: none;
+}
+
+/* INPUT HELPER */
+
+.input {
+    position: absolute;
+    z-index: -10;
+    opacity: 0;
+}
+
+/* TYPING DETAILS */
+
+.typing-details {
+    margin-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px 0 12px;
+}
+
+.details-list > li {
+    list-style: none;
+    display: inline-block;
+    color: #727374;
+    margin-right: 10px;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+.typing-settings {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+}
+
+.change-paragraph {
+    color: var(--yellow-secondary);
+    font-weight: 400;
+    font-size: 0.85rem;
+    transition: color 0.35s, filter 0.4s;
+    cursor: pointer;
+}
+
+.change-paragraph:hover {
+    color: #f5cb5c;
+}
+
+/* BUTTON TRY AGAIN */
+
+#resetBtn {
+    background-color: #2e2e2d;
+    height: 30px;
+    overflow: hidden;
+    font-size: 17px;
+    padding: 5px 12px;
+    border: none;
+    outline: none;
+    display: flex;
+    color: #727374;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.list li {
+    list-style-type: none;
+    display: flex;
+    margin-bottom: 5px;
+}
+
+span {
+    transition: transform 0.4s, color 0.4s;
+}
+
+#resetBtn:hover li span {
+    transform: translateY(-125%);
+    color: var(--correct-letter);
+}
+
+.list li span:nth-child(1) {
+    transition-delay: 0.05s;
+}
+
+.list li span:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.list li span:nth-child(3) {
+    transition-delay: 0.15s;
+}
+
+.list li span:nth-child(4) {
+    transition-delay: 0.2s;
+}
+
+.list li span:nth-child(5) {
+    transition-delay: 0.25s;
+}
+
+/* CLASS LISTS */
+
+.hidden {
+    display: none;
+}
+
+.correct-letter {
+    color: var(--correct-letter);
+}
+
+.incorrect-letter {
+    color: var(--wrong-letter);
+}
+
+.shake-text-end {
+    animation: shakeText 0.2s;
+}
+
+@keyframes shakeText {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    30%,
+    70% {
+        transform: translateX(3px);
+        color: darkred;
+    }
+
+    50% {
+        transform: translateX(-3px);
+        color: darkred;
+    }
+}
+
+.i-beam-pointer {
+    border-left: 1px solid var(--yellow-secondary);
+    margin-left: -1px;
+    animation: blinkPointer 1.2s infinite;
+}
+
+@keyframes blinkPointer {
+    50% {
+        border-left: 1px solid transparent;
+    }
+}

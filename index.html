@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Typing Speed</title>
+        <link rel="stylesheet" href="./style.css" />
+        <link rel="shrortcut icon" href="./img/icon.png" type="image/png" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="typing-settings">
+                <ul class="duration-options">
+                    <li class="selected-duration">30</li>
+                    <li>60</li>
+                    <li>90</li>
+                </ul>
+                <p class="change-paragraph">I don't like this text</p>
+            </div>
+
+            <div class="text-area">
+                <input type="text" class="input" />
+                <p class="blur-info">Click here to focus</p>
+                <p class="text"></p>
+            </div>
+
+            <div class="typing-details hidden">
+                <ul class="details-list">
+                    <li>wpm: <span></span></li>
+                    <li>acc: <span></span>%</li>
+                    <li>total typed: <span></span></li>
+                </ul>
+                <div class="try-again-button">
+                    <button id="resetBtn">
+                        <ul class="list">
+                            <li>
+                                <span>A</span>
+                                <span>g</span>
+                                <span>a</span>
+                                <span>i</span>
+                                <span>n</span>
+                            </li>
+                            <li>
+                                <span>A</span>
+                                <span>g</span>
+                                <span>a</span>
+                                <span>i</span>
+                                <span>n</span>
+                            </li>
+                        </ul>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <script src="./scripts/main.js"></script>
+    </body>
+</html>
