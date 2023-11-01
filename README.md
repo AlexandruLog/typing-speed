@@ -1,3 +1,3 @@
 # typing-speed
 
-Live page: https://alexandrulog.github.io/typing-speed/
+Live Page: https://alexandrucode.github.io/typing-speed/
